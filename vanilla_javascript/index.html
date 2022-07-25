@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TODO</title>
+  </head>
+  <body>
+    <ul id="todos"></ul>
+    <form>
+      <input name="todo" type="text">
+      <button type="submit">Add Todo</button>
+    </form>
+    <script>
+      // Select DOM elements
+      const form = document.querySelector("form");
+      const input = document.querySelector("[name='todo']");
+      const todoList = document.getElementById('todos');
+
+      // State
+      const todoState = JSON.parse(localStorage.getItem('todos')) || [];
+
+      // Hydrate UI with persistent state
+      todoState.forEach((todo) => {
+        updateUI(todo);
+      });
+
+      // Actions
+      function updateState(todoText) {
+        todoState.push(todoText);
+      };
+
+      function updateUI(todoText) {
+        const li = document.createElement('li');
+        li.innerHTML = todoText;
+        todoList.appendChild(li);
+      };
+
+      function saveToLocalStorage(todoState) {
+        localStorage.setItem('todos', JSON.stringify(todoState))
+      };
+
+      // Form submission
+      function onSubmit(event) {
+        console.log('did it work?')
+        event.preventDefault();
+        updateState(input.value);
+        updateUI(input.value);
+        saveToLocalStorage(todoState);
+      };
+
+      form.onsubmit = onSubmit;
+    </script>
+  </body>
+</html>
