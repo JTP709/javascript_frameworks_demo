@@ -6,7 +6,7 @@
 
   function updateTodos (event) {
     todos = [...todos, event.detail.todo];
-  }
+  };
 
 </script>
 
