@@ -19,4 +19,10 @@
 </main>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+:global(body) {
+  background-color: rgb(39, 44, 44);
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
 </style>

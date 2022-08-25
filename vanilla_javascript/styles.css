@@ -1,3 +1,9 @@
+body {
+  background-color: rgb(39, 44, 44);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
 button {
   background: none;
   background-color: rgb(74, 165, 66);
@@ -8,7 +14,6 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  margin: 0 4px;
 }
 
 input {
